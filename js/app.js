@@ -25,9 +25,8 @@ angular.module('myApp', [])
 
         set.addEventListener('click', function() {
             var getDate = document.getElementById('datepicker').value;
-            console.log(getDate);
+            
             if (getDate != '') {
-                console.log(new Date(getDate));
                 var myDate = new Date(getDate);
 
                 //add a day to the date
@@ -42,7 +41,6 @@ angular.module('myApp', [])
     });
 
 function eventsFunction(value) {
-    console.log(value);
     var showCalendar = new DayPilot.Calendar("showCalendar");
     showCalendar.businessBeginsHour = 9;
     showCalendar.businessEndsHour = 18;
@@ -108,8 +106,6 @@ function eventsFunction(value) {
 
     };
     showCalendar.onEventClicked = function(args) {
-        console.log(args.e.cache.start.value);
-        console.log(args.e.cache.end.value);
         var startDateGet = new Date(args.e.cache.start.value);
         var endDateGet = new Date(args.e.cache.end.value);
         $.alert({
